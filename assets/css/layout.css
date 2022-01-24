@@ -185,10 +185,11 @@ header .nav:hover .bar {
 
 .sec_01 .img_area .circle.type_03 {
   z-index:10;
-  top: 290px;
-  left: -70px;
+  top: 270px;
+  left: -90px;
   width: 130px;
   height: 140px;
   background: linear-gradient(289deg, #bbe1f3, #f9b1b1);
-  border-radius: 50% 70% 70% 65%;
+  border-radius: 80% 60% 80% 65%;
+  box-shadow: 10px 5px 15px rgb(0 0 0 / 10%);
 }

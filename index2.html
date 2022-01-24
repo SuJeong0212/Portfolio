@@ -99,8 +99,8 @@ window.onload = function(){
 }
 
 function loop(){
-    mx += (x - mx) * 0.09;
-    my += (y - my) * 0.09;
+    mx += (x - mx) * 0.2;
+    my += (y - my) * 0.2;
     targetArea.style.transform = "translate(" + mx + "px," + my + "px)";
 
     requestAnimationFrame(loop);
