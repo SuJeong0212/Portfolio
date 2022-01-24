@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animation.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo_area">
+      <h1>KimSu<br>Jeong.</h1>
+    </div>
+    <button class="nav">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+  <section class="sec_01">
+    <div class="title_area">
+      <h2 class="title">
+        Hello! <em><img src="/assets/img/hands.png" alt="인사"></em><br>
+        I'm Your
+        Friendly <br>
+        Web Publisher <br>
+        Kim Su Jeong :-)
+      </h2>
+    </div>
+    <div class="img_area">
+      <div class="thumb">
+        <img src="/assets/img/main_profile.jpg" alt="프로필">
+      </div>
+      <div class="circle type_01"></div>
+      <div class="circle type_02"></div>
+      <div class="circle type_03"></div>
+    </div>
+  </section>
+
+  <section style="height: 100vh;">
+
+  </section>
+
+  <div class="target_area">
+    <div class="target"></div>
+  </div>
+
+  <script>
+
+let targetArea = document.querySelector('.target_area');
+let target = document.querySelector('.target');
+let thumb = document.querySelector('.thumb');
+let logo = document.querySelector('.logo_area');
+let nav = document.querySelector('.nav');
+let x = 0;
+let y = 0;
+let mx = 0;
+let my= 0;
+
+window.onload = function(){
+    
+    thumb.addEventListener('mouseenter', (e) => {
+      target.style.transform = 'scale(0.5)'
+    })
+    thumb.addEventListener('mouseleave', (e) => {
+      target.style.transform = 'scale(1)'
+    })
+    logo.addEventListener('mouseenter', (e)=> {
+      target.style.transform = 'scale(0.5)'
+    })
+    logo.addEventListener('mouseleave', (e) => {
+      target.style.transform = 'scale(1)'
+    })
+    nav.addEventListener('mouseenter', (e)=> {
+      target.style.transform = 'scale(0.5)'
+    })
+    nav.addEventListener('mouseleave', (e) => {
+      target.style.transform = 'scale(1)'
+    })
+
+    logo.addEventListener('click', () => {
+      document.body.scrollIntoView({behavior : "smooth"});
+    });
+
+
+
+
+    window.addEventListener("mousemove",function(e){
+        x = e.pageX;
+        y = e.pageY;
+        targetArea.style.transform = "translate(" + x + "px," + y + "px)";
+    });
+    loop();
+}
+
+function loop(){
+    mx += (x - mx) * 0.09;
+    my += (y - my) * 0.09;
+    targetArea.style.transform = "translate(" + mx + "px," + my + "px)";
+
+    requestAnimationFrame(loop);
+}
+
+  </script>
+</body>
+
+</html>
