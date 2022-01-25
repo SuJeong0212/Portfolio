@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -25,23 +26,47 @@
   <section class="sec_01">
     <div class="title_area">
       <h2 class="title">
-        Hello! <em><img src="./assets/img/hands.png" alt="인사"></em><br>
-        I'm Your
-        Friendly <br>
+        Hello! <em><img src="assets/img/hands.png" alt="인사"></em><br>
+        <div class="text">
+          <p>I'm Your</p>
+          <p>
+            <span class="word wisteria">Friendly</span>
+            <span class="word belize">Good</span>
+            <span class="word pomegranate">Creative</span>
+            <span class="word green">Influential</span>
+          </p>
+        </div>
         Web Publisher <br>
-        Kim Su Jeong :-)
+        <span class="name">Kim Su Jeong</span> :-)
       </h2>
     </div>
     <div class="img_area">
       <div class="thumb">
-        <img src="./assets/img/main_profile.jpg" alt="프로필">
+        <img src="assets/img/main_profile.jpg" alt="프로필">
       </div>
       <div class="circle type_01"></div>
       <div class="circle type_02"></div>
       <div class="circle type_03"></div>
     </div>
-  </section>
 
+  </section>
+  <div class="arrow">
+    <svg width="100" height="100" viewBox="0 0 40 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M36.0966 1.24609C38.5704 7.46407 40.8637 13.8516 38.1845 20.4308C35.9823 25.8386 31.262 30.4775 26.9884 34.2898C21.4527 39.2278 15.4434 43.1683 8.59045 45.9095" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+      <path d="M16.1551 32.2681C12.1959 38.4542 7.17625 43.9461 2.6592 49.7279C2.49195 49.942 0.0964166 52.2414 1.37316 51.8159C4.88566 50.645 8.53994 49.8266 12.1305 48.9412C14.1352 48.4468 16.1482 47.9863 18.1522 47.4887C18.3459 47.4406 20.6578 47.0724 20.9361 46.5507C21.3152 45.8398 18.0216 42.361 17.7891 42.0722C14.7532 38.3016 11.5948 34.633 8.63551 30.8005C8.19289 30.2272 7.66721 29.6809 7.44024 29" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+      </svg>
+      
+
+      <p class="arrow_txt">Click!</p>
+
+      <script>
+        var myPath = document.querySelector("path");
+var length = myPath.getTotalLength();
+console.log(length); 
+      </script>
+      
+  </div>
+  
   <section style="height: 100vh;">
 
   </section>
@@ -51,61 +76,131 @@
   </div>
 
   <script>
+    let targetArea = document.querySelector('.target_area');
+    let target = document.querySelector('.target');
+    let thumb = document.querySelector('.thumb');
+    let logo = document.querySelector('.logo_area');
+    let nav = document.querySelector('.nav');
+    let sec01 = document.querySelector('.sec_01');
+    let imgArea = document.querySelector('.img_area');
+    let circle = document.querySelectorAll('.circle');
+    let name = document.querySelector('.name');
+    let x = 0;
+    let y = 0;
+    let mx = 0;
+    let my = 0;
 
-let targetArea = document.querySelector('.target_area');
-let target = document.querySelector('.target');
-let thumb = document.querySelector('.thumb');
-let logo = document.querySelector('.logo_area');
-let nav = document.querySelector('.nav');
-let x = 0;
-let y = 0;
-let mx = 0;
-let my= 0;
+    window.addEventListener('load', () => {
 
-window.onload = function(){
-    
-    thumb.addEventListener('mouseenter', (e) => {
-      target.style.transform = 'scale(0.5)'
+      var words = document.getElementsByClassName('word');
+      var wordArray = [];
+      var currentWord = 0;
+
+      words[currentWord].style.opacity = 1;
+      for (var i = 0; i < words.length; i++) {
+        splitLetters(words[i]);
+      }
+
+      function changeWord() {
+        var cw = wordArray[currentWord];
+        var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+        for (var i = 0; i < cw.length; i++) {
+          animateLetterOut(cw, i);
+        }
+
+        for (var i = 0; i < nw.length; i++) {
+          nw[i].className = 'letter behind';
+          nw[0].parentElement.style.opacity = 1;
+          animateLetterIn(nw, i);
+        }
+
+        currentWord = (currentWord == wordArray.length - 1) ? 0 : currentWord + 1;
+      }
+
+      function animateLetterOut(cw, i) {
+        setTimeout(function () {
+          cw[i].className = 'letter out';
+        }, i * 80);
+      }
+
+      function animateLetterIn(nw, i) {
+        setTimeout(function () {
+          nw[i].className = 'letter in';
+        }, 340 + (i * 80));
+      }
+
+      function splitLetters(word) {
+        var content = word.innerHTML;
+        word.innerHTML = '';
+        var letters = [];
+        for (var i = 0; i < content.length; i++) {
+          var letter = document.createElement('span');
+          letter.className = 'letter';
+          letter.innerHTML = content.charAt(i);
+          word.appendChild(letter);
+          letters.push(letter);
+        }
+
+        wordArray.push(letters);
+      }
+
+      changeWord();
+      setInterval(changeWord, 4000);
+
+
+
+      thumb.addEventListener('mouseenter', (e) => {
+        target.style.transform = 'scale(0.5)'
+      })
+      thumb.addEventListener('mouseleave', (e) => {
+        target.style.transform = 'scale(1)'
+      })
+      logo.addEventListener('mouseenter', (e) => {
+        target.style.transform = 'scale(0.5)'
+      })
+      logo.addEventListener('mouseleave', (e) => {
+        target.style.transform = 'scale(1)'
+      })
+      nav.addEventListener('mouseenter', (e) => {
+        target.style.transform = 'scale(0.5)'
+      })
+      nav.addEventListener('mouseleave', (e) => {
+        target.style.transform = 'scale(1)'
+      })
+
+      logo.addEventListener('click', () => {
+        document.body.scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+
+
+      sec01.addEventListener('mousemove', function (e) {
+        x = (e.clientX - window.innerWidth / 2);
+        y = (e.clientX - window.innerHeight / 2);
+        imgArea.style.transform = "translate(" + -(mx / 25) + "px," + -(my / 25) + "px)";
+        circle[0].style.transform = "translate(" + (mx / 40) + "px," + (my / 40) + "px)";
+        circle[1].style.transform = "translate(" + (mx / 50) + "px," + (my / 50) + "px)";
+        circle[2].style.transform = "translate(" + -(mx / 40) + "px," + -(my / 40) + "px)";
+
+      });
+      loop();
     })
-    thumb.addEventListener('mouseleave', (e) => {
-      target.style.transform = 'scale(1)'
-    })
-    logo.addEventListener('mouseenter', (e)=> {
-      target.style.transform = 'scale(0.5)'
-    })
-    logo.addEventListener('mouseleave', (e) => {
-      target.style.transform = 'scale(1)'
-    })
-    nav.addEventListener('mouseenter', (e)=> {
-      target.style.transform = 'scale(0.5)'
-    })
-    nav.addEventListener('mouseleave', (e) => {
-      target.style.transform = 'scale(1)'
-    })
-
-    logo.addEventListener('click', () => {
-      document.body.scrollIntoView({behavior : "smooth"});
-    });
-
-
-
-
-    window.addEventListener("mousemove",function(e){
-        x = e.pageX;
-        y = e.pageY;
-        targetArea.style.transform = "translate(" + x + "px," + y + "px)";
+    window.addEventListener("mousemove", function (e) {
+      x = e.pageX;
+      y = e.pageY;
+      targetArea.style.transform = "translate(" + x + "px," + y + "px)";
     });
     loop();
-}
 
-function loop(){
-    mx += (x - mx) * 0.2;
-    my += (y - my) * 0.2;
-    targetArea.style.transform = "translate(" + mx + "px," + my + "px)";
 
-    requestAnimationFrame(loop);
-}
+    function loop() {
+      mx += (x - mx) * 0.2;
+      my += (y - my) * 0.2;
+      targetArea.style.transform = "translate(" + mx + "px," + my + "px)";
 
+      requestAnimationFrame(loop);
+    }
   </script>
 </body>
 

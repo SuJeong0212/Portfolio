@@ -29,3 +29,53 @@
     transform: rotate(0deg);
   }
 }
+
+/* 메인 arrow 애니메이션 */
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* @keyframes changeText {
+  0% {
+    transform: translateY(0px);
+  }
+
+  12.5% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-130px);
+  }
+
+  37.5% {
+    transform: translateY(-130px);
+  }
+
+  50% {
+    transform: translateY(-260px);
+  }
+
+  62.5% {
+    transform: translateY(-260px);
+  }
+
+  75% {
+    transform: translateY(-390px);
+  }
+
+  87.5% {
+    transform: translateY(-520px);
+  }
+
+  93.75% {
+    transform: translateY(-520px);
+  }
+
+  100% {
+    transform: translateY(-650px);
+  }
+} */
