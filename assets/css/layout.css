@@ -1521,16 +1521,16 @@ body.modal_active {
   transition: all 0.3s ease;
 }
 
-.gameBtn:hover::before {
+.modal.item_02 .gameBtn:hover::before {
   width: 100%;
   background: #ffab9d;
 }
 
-.gameBtn:hover svg {
+.modal.item_02 .gameBtn:hover svg {
   transform: translateX(0);
 }
 
-.gameBtn:active {
+.modal.item_02 .gameBtn:active {
   transform: scale(0.96);
 }
 
