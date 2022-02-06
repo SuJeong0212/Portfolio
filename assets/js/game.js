@@ -248,7 +248,7 @@
 
     const data = {
         lives: 1,
-        speed: 2,
+        speed: 10,
         paddleHeight: 10,
         paddleWidth: 75,
         bg: './assets/img/game.jpg',
