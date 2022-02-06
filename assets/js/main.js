@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
     const hour = time.getHours();
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
-    document.querySelector('#modal_container .date_area .date').innerHTML = `${year}년 ${month}월 ${day}일 ${hour<10 ? `0${hour}`:hour}:${minutes<10 ? `0${minutes}`:minutes}:${seconds<10 ? `0${seconds}`:seconds} <img src="/assets/img/firecracker.png" alt="폭죽">`
+    document.querySelector('#modal_container .date_area .date').innerHTML = `${year}년 ${month}월 ${day}일 ${hour<10 ? `0${hour}`:hour}:${minutes<10 ? `0${minutes}`:minutes}:${seconds<10 ? `0${seconds}`:seconds} <img src="./assets/img/firecracker.png" alt="폭죽">`
   }
 
 
