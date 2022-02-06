@@ -2,18 +2,18 @@
 
 * {
     margin: 0;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box; }
   
   html {
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
     font-size: 16px; }
   
   body {
-    font-family: "Noto Sans KR", sans-serif;
-    color: #3f4150; }
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    color: #000; }
   
   h1 {
     margin: 0; }
@@ -53,4 +53,10 @@
     img {
       display: inline-block;
       max-width: 100%;
+    }
+
+    .clearFix::after {
+      display: block;
+      content: '';
+      clear: both;
     }

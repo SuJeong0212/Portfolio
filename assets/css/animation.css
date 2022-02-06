@@ -38,44 +38,140 @@
   }
 }
 
-/* @keyframes changeText {
+/* contact moon 애니메이션  */
+
+@keyframes moon {
   0% {
-    transform: translateY(0px);
-  }
-
-  12.5% {
-    transform: translateY(0px);
-  }
-
-  25% {
-    transform: translateY(-130px);
-  }
-
-  37.5% {
-    transform: translateY(-130px);
+    transform: translateX(-50%) translateY(20px);
   }
 
   50% {
-    transform: translateY(-260px);
-  }
-
-  62.5% {
-    transform: translateY(-260px);
-  }
-
-  75% {
-    transform: translateY(-390px);
-  }
-
-  87.5% {
-    transform: translateY(-520px);
-  }
-
-  93.75% {
-    transform: translateY(-520px);
+    transform: translateX(-50%) translateY(0px);
   }
 
   100% {
-    transform: translateY(-650px);
+    transform: translateX(-50%) translateY(20px);
   }
-} */
+}
+
+/* contact dot 애니메이션  */
+
+@keyframes dot {
+  100% {
+    opacity: 1;
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+
+/* contact text hover 애니메이션 */
+
+@keyframes ball {
+  0% {
+    animation-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+    transform: translate(0, 0);
+  }
+
+  12% {
+    animation-timing-function: cubic-bezier(.42, 0, 1, 1);
+    transform: translate(0, -18px);
+  }
+
+  24% {
+    animation-timing-function: cubic-bezier(0, 0, .58, 1);
+    transform: translate(0, 0);
+  }
+
+  33% {
+    animation-timing-function: cubic-bezier(.42, 0, 1, 1);
+    transform: translate(0, -10px);
+  }
+
+  42% {
+    animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+    transform: translate(0, 0);
+  }
+}
+
+
+/* 모달 open 시 container 애니메이션  */
+
+@keyframes unfoldIn {
+	0% {
+		transform: scaleX(0) scaleY(0.005);
+	}
+	50% {
+		/* 0.5 초간 세로 크기는 작은상태로 가로 너비만 확대  */
+		transform: scaleX(1) scaleY(0.005);
+	}
+	100% {
+		/* 0.5 초간 세로 크기를 확대 */
+		transform: scaleY(1) scaleX(1);
+	}
+}
+
+/* 모달 open 시 모달 애니메이션 */
+@keyframes zoomIn {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+/* 모달 close 시 container 애니메이션  */
+
+@keyframes unfoldOut {
+	0% {
+		transform: scale(1)
+	}
+	50% {
+		transform: scaleX(1) scaleY(0.005);
+	}
+	100% {
+		transform: scaleX(0) scaleY(0.005);
+	}
+}
+
+
+/* 모달 close 시  모달 애니메이션 */
+
+@keyframes zoomOut {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+
+/* project 스크롤 fade-in 애니메이션 */
+
+@keyframes fade-in {
+  from {opacity: 0; transform: translate(100px, 0);}
+  to {opacity: 1;}
+}
+
+/*  nav text 애니메이션 */
+
+@keyframes slide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(-20%, 0, 0);
+	}
+}
+
+@keyframes slide-2 {
+	0% {
+		transform: translate3d(30%, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(50%, 0, 0);
+	}
+}
