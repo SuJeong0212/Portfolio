@@ -732,27 +732,27 @@ body.nav_active footer {
 }
 
 .portfolio_02 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Naver.jpg');
+  background-image: url('../img/Naver.jpg');
 }
 
 .portfolio_03 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Lush.png');
+  background-image: url('../img/Lush.png');
 }
 
 .portfolio_04 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Sulwhasoo.png');
+  background-image: url('../img/Sulwhasoo.png');
 }
 
 .portfolio_05 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Concierge.png');
+  background-image: url('../img/Concierge.png');
 }
 
 .portfolio_06 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Actor.png');
+  background-image: url('../img/Actor.png');
 }
 
 .portfolio_07 .portfolio_thumb_area .thumb {
-  background-image: url('/assets/img/Monami.png');
+  background-image: url('../img/Monami.png');
 }
 
 
