@@ -1,5 +1,5 @@
 window.onload = function(){
-    var input = document.getElementsByTagName("input")[0];
+    var input = document.querySelector("#random_input");
     var result = document.querySelector(".result");
     var button = document.querySelector(".startBtn");
 
