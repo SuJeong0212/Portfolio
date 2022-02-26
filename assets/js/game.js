@@ -177,8 +177,8 @@
                             alert('YOU WIN!')
                             this.ctx.fillText(' YOU WIN ',this.canvas.width/2-20, this.canvas.height/2+20)
                             document.querySelector('.gameBtn').style.opacity = '1'
-                            // this.reset(true)
-                            return
+                            this.reset(true)
+                            // return
                     }
                 }
             }
@@ -218,7 +218,7 @@
                         this.ctx.fillText(' GAME OVER ',this.canvas.width/2-30, this.canvas.height/2+20)
                         alert('GAME OVER!')
                             document.querySelector('.gameBtn').style.opacity = '1'
-                            // this.reset(true)
+                            this.reset(true)
                             return
                     } else {
                         this.ballX = this.canvas.width / 2

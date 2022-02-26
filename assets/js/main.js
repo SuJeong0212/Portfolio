@@ -379,7 +379,13 @@ window.addEventListener('load', () => {
     }, {
       passive: false
     })
+
+
+    if(window.innerWidth <= 768){
+      item.removeEventListener('mousewheel',null)
+    }
   });
+
 
   function setActive(el) {
     console.log(el);
