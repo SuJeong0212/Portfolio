@@ -9,9 +9,9 @@ html {
 /* container */
 
 .container {
-  background: linear-gradient(-45deg, #47C5CF, #94DABC, #FFCF54, #FAD1E2);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(280deg, #47C5CF, #94DABC, #FFCF54, #f8c7db);
+  background-size: 200% 200%;
+  animation: gradient 7s ease infinite;
 }
 
 
