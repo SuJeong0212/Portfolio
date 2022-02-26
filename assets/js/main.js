@@ -22,6 +22,10 @@ let y = 0;
 let mx = 0;
 let my = 0;
 
+window.addEventListener('load',function(){
+  console.log('222')
+})
+
 window.addEventListener('load', () => {
 
   // modal date event
